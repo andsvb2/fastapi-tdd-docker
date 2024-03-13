@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "tdd fastapi summary"
+version = "0.1.0"
+description = ""
+authors = ["Anderson S. Vieira <svieira.anderson@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "0.109.0"
+uvicorn = "0.26.0"
+pydantic-settings = "2.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.6.2"
+pylint = "^3.1.0"
+pylint-pydantic = "^0.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
