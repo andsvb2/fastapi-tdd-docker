@@ -13,16 +13,32 @@ spec:
 
   containers:
     - name: web
-      image: fastapi-summary
+      image: summary-app
       ports:
       - containerPort: 8000
         hostPort: 8004
+      command: ["uvicorn", "app.main:app", "--reload", "--workers", "1", "--host", "0.0.0.0", "--port", "8000"]
       volumeMounts:
       - mountPath: /usr/src/app:Z
         name: app-src
       env:
-        - name: ENVIRONMENT
-          value: dev
-        - name: TESTING
-          value: 0
-      command: ["uvicorn", "app.main:app", "--reload", "--workers", "1", "--host", "0.0.0.0", "--port", "8000"]
+      - name: ENVIRONMENT
+        value: dev
+      - name: TESTING
+        value: 0
+      - name: DATABASE_URL
+        value: postgres://postgres:postgres@web-db:5432/web_dev
+      - name: DATABASE_TEST_URL
+        value: postgres://postgres:postgres@web-db:5432/web_test
+      requires: web-db
+    
+    - name: web-db
+      image: summary-db
+      ports:
+      - containerPort: 5432
+        hostPort: 5434
+      env:
+      - name: POSTGRES_USER
+        value: postgres
+      - name: POSTGRES_PASSWORD
+        value: postgres
