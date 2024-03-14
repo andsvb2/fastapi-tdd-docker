@@ -1,0 +1,7 @@
+{
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.pytest_cache": true
+    },
+    "pylint.args": ["--rcfile=./project/.pylintrc", "--load-plugins", "pylint_pydantic"]
+}
