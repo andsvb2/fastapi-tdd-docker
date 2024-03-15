@@ -10,4 +10,13 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PyNamespacePackagesService">
+    <option name="namespacePackageFolders">
+      <list>
+        <option value="$MODULE_DIR$/project/app" />
+        <option value="$MODULE_DIR$/project/app/api" />
+        <option value="$MODULE_DIR$/project/app/models" />
+      </list>
+    </option>
+  </component>
 </module>
