@@ -39,14 +39,14 @@ web:
   commands:
     # The command to launch your app. If it terminates, it’s restarted immediately.
     # You can use the $PORT or the $SOCKET environment variable depending on the socket family of your upstream
-    start: "poetry -C ./project run gunicorn --bind localhost:$PORT app.main:app -k uvicorn.workers.UvicornWorker"
+    start: "poetry run gunicorn --bind localhost:$PORT app.main:app -k uvicorn.workers.UvicornWorker"
   # You can listen to a UNIX socket (unix) or a TCP port (tcp, default).
   # Whether your app should speak to the webserver via TCP or Unix socket. Defaults to tcp
   # More information: https://docs.platform.sh/create-apps/app-reference.html#where-to-listen
   upstream:
     # Whether your app should speak to the webserver via TCP or Unix socket. Defaults to tcp
     # More information: https://docs.platform.sh/create-apps/app-reference.html#where-to-listen
-    socket_family: unix
+    socket_family: TCP
   # Each key in locations is a path on your site with a leading /.
   # More information: https://docs.platform.sh/create-apps/app-reference.html#locations
   locations:
