@@ -102,7 +102,7 @@ hooks:
     # Install poetry as a global tool
     python -m venv /app/.global
     pip install poetry==$POETRY_VERSION
-    poetry install -C ./project
+    poetry install
     
   # The deploy hook is run after the app container has been started, but before it has started accepting requests.
   # More information: https://docs.platform.sh/create-apps/hooks/hooks-comparison.html#deploy-hook

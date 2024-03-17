@@ -3,7 +3,7 @@ name = "tdd fastapi summary"
 version = "0.1.0"
 description = ""
 authors = ["Anderson S. Vieira <svieira.anderson@gmail.com>"]
-readme = "../README.md"
+readme = "README.md"
 package-mode = false
 
 
