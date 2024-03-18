@@ -34,14 +34,10 @@ relationships:
 
 hooks:
     build:
-#       Fail the build if any errors occur
       set -eu
-#       Download the latest version of pip
       python3.12 -m pip install --upgrade pip
-#       Install dependencies
       pip install -r requirements.txt
       pip install "uvicorn[standard]==0.26.0"
-#      pipenv install --system --deploy
 
 web:
   commands:
