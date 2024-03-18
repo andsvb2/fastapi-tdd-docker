@@ -7,7 +7,7 @@ spec:
 
   volumes:
     - hostPath:
-        path: ./project
+        path: .
         type: Directory
       name: app-src
 

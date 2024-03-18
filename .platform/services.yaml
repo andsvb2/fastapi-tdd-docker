@@ -4,6 +4,23 @@
 # to power your Platform.sh project.
 # More information: https://docs.platform.sh/add-services.html
 # Full list of available services: https://docs.platform.sh/add-services.html#available-services
-postgresql:
-  type: postgresql:15 # All available versions are: 15, 14, 13, 12, 11
+postgres:
+  type: postgresql:16 # All available versions are: 15, 14, 13, 12, 11
   disk: 1024 # All available sizes are: 1024, 2048, 3072, 4096, 5120
+  configuration:
+    databases:
+      - web_dev
+      - web_test
+    endpoints:
+      admin:
+        privileges:
+          web_dev: admin
+          web_test: admin
+      web_dev:
+        default_database: web_dev
+        privileges:
+          web_dev: admin
+      web_test:
+        default_database: web_test
+        privileges:
+          web_test: admin
