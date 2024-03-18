@@ -33,7 +33,7 @@ relationships:
 
 
 hooks:
-    build: |
+    build:
 #       Fail the build if any errors occur
       set -eu
 #       Download the latest version of pip
