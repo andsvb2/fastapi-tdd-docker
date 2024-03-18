@@ -33,7 +33,7 @@ relationships:
 
 
 hooks:
-    build:
+    build: | 
       set -eu
       python3.12 -m pip install --upgrade pip
       pip install -r requirements.txt
